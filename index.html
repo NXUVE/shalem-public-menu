@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shalem · Renacer — Carta</title>
+<style>
+:root{--bg:#faf3e8;--card:#fff;--ink:#2b1d14;--mute:#8a7566;--ac:#b5532a;--line:#eadfce;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a120d;--card:#271b14;--ink:#f6ebdd;--mute:#b09b88;--ac:#e8814f;--line:#3a2a20}}
+:root[data-theme="dark"]{--bg:#1a120d;--card:#271b14;--ink:#f6ebdd;--mute:#b09b88;--ac:#e8814f;--line:#3a2a20}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}html,body{margin:0;min-height:100%}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+h1,h2,.serif{font-family:Georgia,"Times New Roman",serif}
+.scr{display:none;max-width:760px;margin:0 auto;animation:f .35s}.scr.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(10px)}to{opacity:1}}
+#w{min-height:100vh;min-height:100dvh;text-align:center;padding:11vh 24px 50px;background:radial-gradient(circle at 50% 0,color-mix(in srgb,var(--ac) 25%,transparent),transparent 60%)}
+#w.on{display:flex;flex-direction:column;align-items:center}
+.logo{font-size:64px;margin-bottom:8px}
+#w h1{font-size:clamp(40px,12vw,64px);margin:0;letter-spacing:1px}
+#w p{color:var(--mute);margin:10px 0 36px;letter-spacing:3px;text-transform:uppercase;font-size:12px}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:99px;padding:17px 56px;font-size:19px;font-weight:600;letter-spacing:1px;box-shadow:0 10px 24px rgba(181,83,42,.35)}
+.btn:active{transform:scale(.96)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:12px 16px;display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line)}
+.bk{background:var(--card);border:1px solid var(--line);color:var(--ink);width:42px;height:42px;border-radius:50%;font-size:20px;flex:none}
+.top h2{margin:0;font-size:22px;flex:1}
+input{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px}
+.pad{padding:14px 16px 40px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,1fr)}}
+.cat{border:0;border-radius:20px;padding:18px 14px;color:#fff;text-align:left;min-height:116px;display:flex;flex-direction:column;justify-content:space-between;font-size:16px;font-weight:600;box-shadow:0 6px 16px rgba(0,0,0,.15)}
+.cat span{font-size:34px}.cat small{font-weight:400;opacity:.85;font-size:12px}
+.it{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px;margin-bottom:10px;width:100%;color:var(--ink);text-align:left;font-size:16px}
+.th{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:26px;flex:none}
+.it b{flex:1;font-weight:600;line-height:1.25}.pr{color:var(--ac);font-weight:700;white-space:nowrap}
+.nt{background:var(--card);border-left:4px solid var(--ac);padding:10px 14px;border-radius:10px;color:var(--mute);font-size:14px;margin-bottom:14px}
+#sh{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:20}
+#sh.on{display:flex}
+.sheet{background:var(--bg);width:100%;max-width:640px;max-height:92vh;overflow:auto;border-radius:28px 28px 0 0;padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));animation:u .3s}
+@keyframes u{from{transform:translateY(100%)}}
+.hero{height:210px;display:grid;place-items:center;font-size:100px;position:relative}
+.x{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.35);color:#fff;border:0;width:38px;height:38px;border-radius:50%;font-size:18px}
+.sb{padding:18px 20px}.sb h2{margin:0 0 4px;font-size:26px}.sb .pr{font-size:22px}
+.ch{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 12px;margin:4px 4px 0 0;font-size:14px}
+.sb h3{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mute);margin:18px 0 4px}
+.sb p{line-height:1.5;margin:6px 0}
+.stk{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg)}.stk .top{position:static}
+#chips{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;position:relative;scrollbar-width:none;border-bottom:1px solid var(--line)}#chips::-webkit-scrollbar{display:none}
+#chips button{flex:none;border-radius:99px;padding:11px 18px;background:var(--card);color:var(--ink);font-size:15px;border:1px solid var(--line);transition:.2s}
+#chips .on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.cs{margin-bottom:8px}.sh{display:flex;justify-content:space-between;align-items:center;padding:22px 2px 12px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.sh h3{margin:0;font-size:28px}.sh small{color:var(--mute)}.sh i{font-style:normal;color:var(--mute);font-size:22px;transition:.3s}
+.cs.cl .bd{display:none}.cs.cl .sh i{transform:rotate(180deg)}
+.cd{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px;margin-bottom:12px;box-shadow:0 4px 14px rgba(0,0,0,.06);transition:transform .15s}.cd:active{transform:scale(.98)}
+.tx{flex:1;display:flex;flex-direction:column;min-width:0}.tx b{font-size:17px}.tx p{color:var(--mute);font-size:14px;margin:4px 0 10px;line-height:1.4}
+.tx em{font-style:normal;font-size:11px;color:var(--ac);font-weight:700;margin-bottom:2px}
+.ft{display:flex;align-items:center;gap:12px;margin-top:auto}
+.th2{width:104px;height:104px;border-radius:18px;display:grid;place-items:center;font-size:50px;flex:none;align-self:center;box-shadow:inset 0 0 30px rgba(255,255,255,.18)}
+.ad{width:34px;height:34px;border-radius:50%;border:0;background:var(--ac);color:#fff;font-size:22px;line-height:1}
+#cb{position:fixed;left:50%;transform:translate(-50%,140px);bottom:calc(16px + env(safe-area-inset-bottom,0px));width:min(92%,520px);background:var(--ac);color:#fff;border-radius:99px;padding:16px 22px;display:flex;justify-content:space-between;z-index:10;transition:.3s;box-shadow:0 10px 26px rgba(0,0,0,.3)}#cb.on{transform:translate(-50%,0)}
+#ts{position:fixed;top:calc(70px + env(safe-area-inset-top,0px));left:50%;transform:translate(-50%,-30px);opacity:0;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;z-index:30;transition:.3s;font-size:14px;pointer-events:none;white-space:nowrap}#ts.on{opacity:1;transform:translate(-50%,0)}
+.or{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.q{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:18px}
+.fl{font-size:36px;display:flex;gap:12px;margin-bottom:20px}.fl span{animation:b 2.4s ease-in-out infinite}@keyframes b{50%{transform:translateY(-12px)}}
+.ftr{color:var(--mute);font-size:12px;text-align:center;margin:26px 0 90px;line-height:1.6}
+#ctl{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:15;display:flex;gap:8px}#ctl button{height:42px;min-width:42px;border-radius:21px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:700;font-size:14px;padding:0 12px}
+.ac{color:var(--ac)}.mk{width:84px;height:84px;border-radius:50%;border:2px solid var(--ac);color:var(--ac);display:grid;place-items:center;font-size:44px;margin-bottom:14px;overflow:hidden}
+.dc{margin-top:34px;width:100%;max-width:420px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:18px 22px;text-align:left;box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.dc small{color:var(--ac);text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:700}.dc h3{margin:6px 0;font-size:24px}.dc ul{margin:8px 0;padding-left:18px;line-height:1.7}.dc .pr{font-size:20px}
+.th2,.hero{overflow:hidden}.th2 img,.hero img{width:100%;height:100%;object-fit:cover;display:block}.hero img{position:absolute;inset:0}
+.th2 svg{width:42%;color:#fff;opacity:.6}.hero svg{width:90px;color:#fff;opacity:.6}
+</style></head><body>
+<div id="ctl"><button onclick="setLang()" id="lb"></button></div>
+<section id="w" class="scr on">
+  <div class="mk serif" style="width:105px;height:105px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px auto;">
+    <img src="logo-black.png" alt="Shalem Logo" style="width:90px;height:90px;object-fit:contain;display:block;">
+  </div>
+  <h1 class="serif">Shalem</h1>
+  <p>Café · Bar · Renacer<br><span data-t="tag"></span></p>
+  <button class="btn" data-t="menu" onclick="go('m')"></button>
+  <div id="dl" class="dc"></div>
+</section>
+<section id="m" class="scr"><div class="stk"><div class="top"><button class="bk" onclick="go('w')">‹</button><h2 class="serif" data-t="title"></h2></div><nav id="chips"></nav></div>
+<div class="pad"><input id="q" type="search" oninput="srch(this.value)"><p data-t="hint" style="color:var(--mute);font-size:14px;margin:10px 2px 0"></p><div id="mb"></div><p class="ftr" data-t="foot"></p></div></section>
+<div id="sh" onclick="if(event.target===this)cl()"><div class="sheet" id="sb"></div></div>
+<script>
+const D=[
+["Carnes y Asados","🥩","Carne de 300 g","Plato fuerte servido con papa al vapor y plátano maduro.","Papa al vapor,Plátano maduro",`Bandeja paisa;40;Frijoles,Arroz,Chicharrón,Huevo,Chorizo,Arepa,Aguacate
+Bandeja paisa personal;35;Frijoles,Arroz,Chicharrón,Huevo,Arepa
+Lomo de res a la plancha;44;Lomo de res
+Lomo de res agridulce;46;Lomo de res
+Lomo de cerdo a la plancha;42;Lomo de cerdo
+Lomo de cerdo agridulce;45;Lomo de cerdo
+Lomo de cerdo gratinado champiñón;48;Lomo de cerdo
+Lomo de cerdo gratinado;46;Lomo de cerdo
+Costilla BBQ;44;Costilla de cerdo
+Filete de pollo a la plancha;42;Pechuga de pollo
+Filete de pollo champiñón;44;Pechuga de pollo
+Filete de pollo gratinado;46;Pechuga de pollo
+Filete de pollo champiñón gratinado;48;Pechuga de pollo
+Chuleta de pollo;39;Pollo apanado
+Chuleta de cerdo;39;Cerdo apanado
+Churrasco;48;Corte de res
+Lomo de res gratinado;48;Lomo de res
+Lomo de res gratinado champiñón;48;Lomo de res`],
+["Patacones","🍌","Porción generosa","Patacón crocante de plátano verde con el topping que prefieras.","Plátano verde",`Patacón con camarón;39;Camarón
+Patacón con champiñón;37
+Patacón mixto;42;Carne,Pollo,Queso
+Patacón con hogao;17
+Patacón con agridulce;17
+Patacón con queso;20
+Patacón con carne;27;Carne
+Patacón con carne y queso;29.5;Carne
+Patacón con pollo;25;Pollo
+Patacón con pollo y queso;28;Pollo
+Patacón con todo;30;Carne,Pollo,Queso,Hogao
+Patacón Shalem;35;Especialidad de la casa`],
+["Desayunos","🍳","Porción individual","Desayuno típico para empezar el día en Salento.","Arepa",`Caldo de costilla, arepa, pan, chocolate;20;Caldo de costilla,Pan,Chocolate
+Huevos al gusto, arepa con queso, chocolate o café;13;Huevos,Arepa con queso,Chocolate o café
+Calentado, huevos al gusto, arepa con queso, chocolate o café;17;Calentado,Huevos,Arepa con queso
+Calentado, chorizo o carne, huevos al gusto, arepa con queso, chocolate o café;20;Calentado,Chorizo o carne,Huevos
+Sandwich y Milo;18;Pan,Jamón,Queso,Milo`],
+["Vegetarianos","🥗","Porción individual","Opción fresca y sin carne, preparada al momento.","Vegetales frescos",`Wrap Thai;22;Tortilla,Salsa thai,Vegetales salteados
+Quesadilla;24;Tortilla,Queso,Champiñones
+Almuerzo Vegetariano;22;Arroz,Proteína vegetal,Ensalada`],
+["Platos Especiales","🐟","Pescado entero","Pescado fresco de la región preparado al gusto.","Pescado fresco",`Mojarra frita;39;Mojarra,Patacón,Ensalada
+Trucha frita;34;Trucha,Patacón,Ensalada
+Trucha a la plancha;34;Trucha,Patacón
+Trucha al ajo a la plancha;38;Trucha,Ajo,Mantequilla
+Trucha Criolla a la plancha;38;Trucha,Hogao`],
+["Truchas al Vapor","🍋","Trucha de 400 g","Preparada al vapor en leche y salsa, acompañada de super patacón.","Trucha,Leche,Super patacón",`Trucha al Ajillo en Callana;40;Ajo,Mantequilla
+Trucha al Ajillo con Champiñones;44;Ajo,Champiñones
+Trucha al Ajillo Mixta;48;Ajo,Camarón,Champiñones
+Trucha Criolla en Callana;40;Hogao
+Trucha Hawaiana;38;Piña,Jamón,Queso
+Trucha en Salsa de Mango;38;Salsa de mango
+Trucha en Salsa de Maracuyá;38;Salsa de maracuyá
+Trucha en Crema de Café;38;Crema de café
+Trucha Ahumada;38;Salsa ahumada
+Trucha Marinera;45;Camarón,Calamar,Mariscos`],
+["Truchas Gratinadas","🧀","Trucha de 350 g","Al horno con salsa bechamel y gratinada, con super patacón.","Trucha,Salsa bechamel,Queso gratinado,Super patacón",`Trucha Gratinada;42
+Trucha Gratinada Mixta;48;Camarón,Champiñones
+Trucha Shalem;42;Receta de la casa
+Trucha Gratinada Camarón;46;Camarón
+Trucha Gratinada Champiñón;44;Champiñones`],
+["Menú Infantil","🧒","Porción infantil","Pensado para los más pequeños.","Papas a la francesa",`Nuggets de Pollo;24;Pollo empanizado
+Filetico de Pollo;24;Pechuga de pollo
+Salchipapa;22;Salchicha,Papas`],
+["Piqueos","🍢","Para compartir","Ideal para compartir en la mesa.","",`Porción Yuca con Hogao;13;Yuca,Hogao
+Porción de Arepas con Hogao;13;Arepa,Hogao
+Porción Chorizo;22;Chorizo
+Porción Patacón;12;Plátano verde
+Porción Papas a la Francesa;12;Papa
+Picada para 4;70;Carnes,Chorizo,Papa,Patacón,Yuca
+Picada para 2;48;Carnes,Chorizo,Papa,Patacón
+Picada de la Casa;80;Selección de la casa`],
+["Sopas","🍲","Plato hondo","Caliente y reconfortante, ideal para el clima de Salento.","",`Consomé de Pollo;12;Pollo,Cilantro,Papa
+Crema de Trucha;12;Trucha,Crema de leche`],
+["Ensaladas","🥬","Plato grande","Fresca y abundante.","Vegetales frescos",`De la Casa;29;Lechuga,Tomate,Pollo,Aderezo de la casa
+César;29;Lechuga,Pollo,Crutones,Parmesano,Aderezo César`],
+["Adicionales","➕","Porción","Para acompañar tu plato.","",`Porción de Arroz;7
+Porción de Ensalada;10
+Porción Agridulce;9
+Porción de Hogao;9.5
+Porción de Frijol;10.6
+Porción de Champiñón;18
+Porción de Chicharrón;21.5
+Porción de Queso;10
+Porción de Camarón;21.5
+Porción de Salsa;7`],
+["Bebidas","🥤","Vaso o jarra","Refrescantes, naturales y bien frías.","",`Jugos Naturales en Agua;10;Fruta natural,Agua
+Jugos Naturales en Leche;12;Fruta natural,Leche
+Limonada Natural;10;Limón,Azúcar
+Jugo de Naranja;10;Naranja
+Limonada de Coco;12;Limón,Coco
+Limonada de Cereza;12;Limón,Cereza
+Limonada de Mango Biche;12;Limón,Mango biche
+Limonada de Hierbabuena;12;Limón,Hierbabuena
+Jarra de Jugo en Agua;21.5
+Jarra de Jugo en Leche;22.5
+Jarra de Refajo;29;Cerveza,Gaseosa
+Sirope;9
+Mazamorra;18;Maíz,Leche
+Aguapanela con Queso;15;Panela,Queso
+Gaseosa;7
+Jugo Hit;7
+Sangría Copa;20.5;Vino,Frutas
+Sangría;71;Vino,Frutas
+Cervezas;8.5;Cerveza fría;Poker,Costeña,Club Colombia,Águila
+Cerveza Artesanal;14`],
+["Café","☕","Taza individual","Café de origen colombiano preparado por nuestros baristas.","Café espresso",`Espresso;4
+Espresso Doble;7
+Espresso Vienés;8.5;Crema chantilly
+Macchiato;6.5;Leche espumada
+Campesino;6
+Americano;6
+Latte;7;Leche
+Latte Caramelo;8.5;Leche,Caramelo
+Latte Vainilla;8.5;Leche,Vainilla
+Cappuccino;8.5;Leche espumada
+Cappuccino Vienés;10.5;Chantilly
+Cappuccino Vainilla;10.5;Vainilla
+Cappuccino Caramelo;10.5;Caramelo
+Cappuccino Licor;14;Licor
+Cappuccino Masmelos;10.5;Masmelos
+Cappuccino Nutella;11.5;Nutella
+Cappuccino Arequipe;11.5;Arequipe
+Mochaccino;10.5;Chocolate,Leche
+Mochaccino Vienés;12.5;Chocolate,Chantilly
+Mochaccino Licor;16;Chocolate,Licor
+Mochaccino Vainilla;12.5;Chocolate,Vainilla
+Mochaccino Caramelo;12.5;Chocolate,Caramelo
+Mochaccino Masmelos;12.5;Chocolate,Masmelos
+Bombóm;8.5;Leche condensada
+Carajillo;13;Licor
+Café Irlandés;13;Whisky,Crema
+Flat White;8;Leche texturizada`],
+["Bebidas Calientes","🍫","Taza","Para entibiar las tardes de montaña.","",`Canelazo;15;Canela,Panela,Aguardiente
+Canelazo sin licor;13;Canela,Panela
+Hervido frutos rojos;13.5;Frutos rojos
+Hervido frutos amarillos;13.5;Frutos amarillos
+Chocolate caliente;7.5;Chocolate,Leche
+Chocolate nevado;10.5;Chocolate,Hielo
+Chocolate masmelos;10.5;Chocolate,Masmelos
+Chocolate con queso;16;Chocolate,Queso
+Aguapanela;7;Panela
+Aguapanela con queso;16;Panela,Queso
+Milo caliente;10;Milo,Leche
+Aromática pequeña;4.5;Hierbas
+Aromática grande;7;Hierbas
+Copa vino caliente;20.5;Vino,Especias
+Migao;19;Especialidad de la casa`],
+["Bebidas Frías","🧊","Vaso grande","Heladas y para refrescar.","Hielo",`Café Renacer;15;Café,Especialidad de la casa
+Granizado Café;16;Café
+Limonada Café;13.5;Café,Limón
+Latte Frío;10.5;Café,Leche
+Latte Frío Vainilla;12;Café,Vainilla
+Latte Frío Caramelo;12;Café,Caramelo
+Affogato;12;Espresso,Helado
+Affogato Licor;15;Espresso,Helado,Licor
+Soda Michelada;8.5;Soda,Limón,Sal
+Soda Frutos Rojos/Amarillos;14.5;Soda,Frutas
+Limonada Vino;19.5;Limón,Vino
+Té Hatsu;8.5;Té`],
+["Smoothies","🍓","Vaso de 12 oz","Fruta natural licuada, espesa y fresca.","Fruta natural,Hielo",`Mora Fresa;15;Mora,Fresa
+Mango Maracuyá;15;Mango,Maracuyá`],
+["Malteadas","🥛","Vaso grande","Cremosas, con helado y chantilly.","Helado,Leche,Chantilly",`Vainilla / Chocolate / Café;16.5;Helado;Vainilla,Chocolate,Café
+Oreo / Brownie / Alfajor / Chocoramo / Cheesecake / Frutos Rojos;17.5;Helado;Oreo,Brownie,Alfajor,Chocoramo,Cheesecake,Frutos Rojos`],
+["Crepes y Sándwich","🥪","Plato con papas","Acompañados de papas a la francesa.","Papas a la francesa",`Stroganoff;27.5;Res,Champiñones,Crema
+Carbonara;26.5;Tocineta,Crema,Queso
+Cerdo BBQ;28.5;Cerdo,Salsa BBQ
+Pollo Champiñón;26.5;Pollo,Champiñones
+Hawaiano;24.5;Jamón,Piña,Queso
+Hawaiano con Pollo;27.5;Pollo,Piña,Queso
+Vegetariano;24.5;Vegetales,Queso
+De la Casa;28.5;Receta de la casa`],
+["Alas","🍗","Salsa a elección","BBQ, miel mostaza o mixtas.","Alas de pollo",`Alas x 6;21.5;Seis alas,Salsa
+Alas x 12;36;Doce alas,Salsa`],
+["Postres","🍰","Porción","Dulce final para la sobremesa.","",`Torta de la Casa;14;Receta de la casa
+Torta del Día;12
+Cheesecake;13;Queso crema,Galleta;Frutos rojos,Maracuyá
+Brownie Sencillo;9.5;Chocolate
+Brownie con Helado;13.5;Chocolate,Helado
+Alfajor;8;Arequipe,Harina de maíz`],
+["Papas","🍟","Plato para compartir","Papas crocantes con todos los toppings.","Papas",`Papas de la Casa;28.5;Pollo,Maíz,Tocineta,Salsa de la casa
+Papas Americanas;22.5;Queso cheddar,Tocineta
+Papas Mexicanas;28.5;Guacamole,Pico de gallo,Cheddar,Crema agria,Frijol refrito`],
+["Nachos","🌮","Plato para compartir","Totopos crujientes con queso derretido.","Totopos",`Sencillos;19.5;Queso cheddar
+Especiales;23.5;Carne molida,Queso cheddar
+De la Casa;28.5;Carne molida,Cheddar,Crema agria,Frijol,Guacamole,Pico de gallo`],
+["Waffles y Crepes","🧇","Base + toppings","Arma el tuyo: elige la base y agrega tus toppings.","Masa casera",`Base;8.5
+Topping Arequipe;5
+Topping Nutella;5
+Topping Frutos Rojos;5
+Topping Chantilly;4.5
+Topping Oreo;4.5
+Topping Barquillos;4.5
+Topping Chips Chocolate;4.5
+Topping M&M;4.5
+Topping Masmelos;4.5
+Topping Kit Kat;4.5
+Topping Banano;3.5
+Topping Fresa;4.5
+Topping Cereza;4.5
+Topping Helado;6.5`],
+["Cócteles","🍹","Copa o vaso","Preparados al momento por nuestro bar.","Licor,Hielo",`Piña Colada;25;Ron,Piña,Coco
+Tequila Sunrise;28;Tequila,Naranja,Granadina
+Laguna Azul;25;Vodka,Curaçao azul
+Margarita;28;Tequila,Limón,Sal
+Mojito;28;Ron,Hierbabuena,Limón
+Cuba Libre;25;Ron,Cola,Limón
+Gin Tonic;28;Ginebra,Agua tónica
+Margarita Maracuyá;31;Tequila,Maracuyá
+Margarita Frutos Rojos;31;Tequila,Frutos rojos
+Mojito Maracuyá;31;Ron,Maracuyá,Hierbabuena
+Mojito Frutos Rojos;31;Ron,Frutos rojos,Hierbabuena
+Copa de Vino;20.5;Vino
+Copa de Sangría;22.5;Vino,Frutas
+Jarra de Sangría;75;Vino,Frutas`]
+].map(([n,e,g,d,i,t],k)=>({n,e,g,d,i:i?i.split(','):[],h:(k*47+15)%360,it:t.split('\n').map(l=>{const[a,b,c,v]=l.split(';');return{n:a,p:Math.round(b*1000),i:c?c.split(','):[],v:v?v.split(','):[]}})}));
+D.forEach(c=>c.it.forEach(x=>x.c=c));
+/* ===== CONFIGURACIÓN (edita aquí) ===== */
+const LOGO='';                 // ruta o data-URI del logo (círculo de bienvenida)
+const IMG={ /* 'Bandeja paisa':'img/bandeja.jpg' */ };   // foto por producto (nombre exacto de la carta)
+const CIMG={ /* 'Carnes y Asados':'img/carnes.jpg' */ }; // foto por categoría (se usa si el producto no tiene)
+const DAILY={price:22000,
+ es:{t:'Menú del día',i:['Consomé de pollo','Lomo de cerdo a la plancha con papa y plátano','Limonada natural']},
+ en:{t:"Today's special",i:['Chicken consommé','Grilled pork loin with potato and plantain','Fresh lemonade']}};
+// Paletas: [fondo, tarjeta, texto, texto suave, acento, línea]; h = tono fijo para placeholders (null = distinto por categoría)
+const T={cafe:{n:'Café',v:['#faf3e8','#ffffff','#2b1d14','#8a7566','#b5532a','#eadfce'],h:null,s:62,d:35,l:38}};
+/* ===== TEXTOS ===== */
+const U={es:{menu:'Menú',tag:'Salento, Quindío',title:'Nuestra <span class="ac">carta</span>',ph:'🔍 ¿Qué se te antoja hoy?',hint:'Toca un plato para ver su foto, ingredientes y detalles',foot:'Precios en COP con impuesto al consumo del 8% incluido.<br>Solo tarjetas nacionales · Pago con tarjeta desde $50.000<br>@shalemrestaurantebar',hot:'★ FAVORITO',add:'Agregar al pedido',ord:'Mi pedido',tot:'Total',emp:'Aún no has agregado nada. ¡Todo se ve delicioso!',ok:'Confirmar pedido',demo:'Demo: el pedido no se envía',desc:'Descripción',ing:'Ingredientes',opt:'Opciones',view:'Ver pedido'},
+en:{menu:'Menu',tag:'Salento, Quindío, Colombia',title:'Our <span class="ac">menu</span>',ph:'🔍 What are you craving?',hint:'Tap a dish to see its photo, ingredients and details',foot:'Prices in COP, 8% consumption tax included.<br>Colombian cards only · Card payments over $50,000<br>@shalemrestaurantebar',hot:'★ FAVORITE',add:'Add to order',ord:'My order',tot:'Total',emp:"You haven't added anything yet. Everything looks delicious!",ok:'Place order',demo:'Demo: the order is not sent',desc:'Description',ing:'Ingredients',opt:'Options',view:'View order'}};
+const E=`Meats & Grills|300 g cut|Main dish served with steamed potato and ripe plantain.
+Patacones|Generous portion|Crispy green plantain tostón with the topping of your choice.
+Breakfasts|Single serving|Traditional breakfast to start the day in Salento.
+Vegetarian|Single serving|Fresh meat-free option, made to order.
+Specials|Whole fish|Fresh local fish cooked your way.
+Steamed Trout|400 g trout|Steamed in milk and sauce, served with super patacón.
+Baked Trout|350 g trout|Oven-baked with béchamel and melted cheese, with super patacón.
+Kids Menu|Kids portion|Made for the little ones.
+Appetizers|To share|Perfect to share at the table.
+Soups|Bowl|Warm and comforting, ideal for Salento's weather.
+Salads|Large plate|Fresh and generous.
+Extras|Side|To go with your dish.
+Drinks|Glass or pitcher|Refreshing, natural and ice cold.
+Coffee|Single cup|Colombian coffee prepared by our baristas.
+Hot Drinks|Cup|To warm up the mountain evenings.
+Cold Drinks|Large glass|Icy and refreshing.
+Smoothies|12 oz glass|Thick, fresh blended fruit.
+Milkshakes|Large glass|Creamy, with ice cream and whipped cream.
+Crepes & Sandwiches|Plate with fries|Served with French fries.
+Wings|Choice of sauce|BBQ, honey mustard or mixed.
+Desserts|Slice|A sweet ending.
+Fries|Sharing plate|Crispy fries with all the toppings.
+Nachos|Sharing plate|Crunchy chips with melted cheese.
+Waffles & Crepes|Base + toppings|Build your own: pick a base and add toppings.
+Cocktails|Glass|Made fresh by our bar.`.split('\n').map(l=>l.split('|'));
+const EI=new Map(`Papa al vapor=Steamed potato;Plátano maduro=Ripe plantain;Frijoles=Beans;Arroz=Rice;Chicharrón=Pork crackling;Huevo=Egg;Huevos=Eggs;Chorizo=Sausage;Aguacate=Avocado;Lomo de res=Beef loin;Lomo de cerdo=Pork loin;Costilla de cerdo=Pork ribs;Pechuga de pollo=Chicken breast;Pollo apanado=Breaded chicken;Cerdo apanado=Breaded pork;Corte de res=Beef cut;Plátano verde=Green plantain;Camarón=Shrimp;Carne=Beef;Pollo=Chicken;Queso=Cheese;Especialidad de la casa=House specialty;Caldo de costilla=Rib broth;Pan=Bread;Arepa con queso=Cheese arepa;Chocolate o café=Chocolate or coffee;Chorizo o carne=Sausage or beef;Jamón=Ham;Leche=Milk;Salsa thai=Thai sauce;Vegetales salteados=Sautéed vegetables;Champiñones=Mushrooms;Proteína vegetal=Plant protein;Ensalada=Salad;Vegetales frescos=Fresh vegetables;Vegetales=Vegetables;Pescado fresco=Fresh fish;Ajo=Garlic;Mantequilla=Butter;Piña=Pineapple;Salsa de mango=Mango sauce;Salsa de maracuyá=Passion fruit sauce;Crema de café=Coffee cream;Salsa ahumada=Smoked sauce;Calamar=Squid;Mariscos=Seafood;Salsa bechamel=Béchamel sauce;Queso gratinado=Melted cheese;Receta de la casa=House recipe;Pollo empanizado=Breaded chicken;Papas a la francesa=French fries;Salchicha=Sausage;Papas=Potatoes;Papa=Potato;Yuca=Cassava;Carnes=Meats;Selección de la casa=House selection;Crema de leche=Cream;Lechuga=Lettuce;Aderezo de la casa=House dressing;Crutones=Croutons;Aderezo César=Caesar dressing;Fruta natural=Fresh fruit;Agua=Water;Limón=Lemon;Azúcar=Sugar;Naranja=Orange;Coco=Coconut;Cereza=Cherry;Mango biche=Green mango;Hierbabuena=Mint;Cerveza=Beer;Gaseosa=Soda;Maíz=Corn;Vino=Wine;Frutas=Fruit;Cerveza fría=Cold beer;Hielo=Ice;Café espresso=Espresso;Crema chantilly=Whipped cream;Leche espumada=Steamed milk;Vainilla=Vanilla;Licor=Liqueur;Masmelos=Marshmallows;Arequipe=Dulce de leche;Leche condensada=Condensed milk;Crema=Cream;Leche texturizada=Steamed milk;Canela=Cinnamon;Frutos rojos=Red berries;Frutos amarillos=Yellow fruits;Especias=Spices;Hierbas=Herbs;Café=Coffee;Helado=Ice cream;Sal=Salt;Té=Tea;Mora=Blackberry;Fresa=Strawberry;Maracuyá=Passion fruit;Queso crema=Cream cheese;Galleta=Cookie;Harina de maíz=Corn flour;Tocineta=Bacon;Salsa de la casa=House sauce;Queso cheddar=Cheddar cheese;Crema agria=Sour cream;Frijol refrito=Refried beans;Frijol=Beans;Totopos=Tortilla chips;Carne molida=Ground beef;Masa casera=Homemade batter;Ron=Rum;Granadina=Grenadine;Curaçao azul=Blue curaçao;Ginebra=Gin;Agua tónica=Tonic water;Res=Beef;Cerdo=Pork;Salsa=Sauce;Seis alas=Six wings;Doce alas=Twelve wings;Alas de pollo=Chicken wings;Chocolate=Chocolate;Panela=Panela;Hogao=Hogao (creole sauce);Calentado=Calentado (rice & beans)`.split(';').map(x=>x.split('=')));
+/* ===== LÓGICA ===== */
+const $=s=>document.querySelector(s),F=n=>'$'+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+let L=(navigator.language||'es').toLowerCase().startsWith('en')?'en':'es',TK='cafe';
+const t=k=>U[L][k],ti=s=>L=='en'?EI.get(s)||s:s,cn=(c,k)=>L=='en'?E[k][0]:c.n,cg=(c,k)=>L=='en'?E[k][1]:c.g,cd=(c,k)=>L=='en'?E[k][2]:c.d;
+const bg=h=>{const m=T[TK],a=m.h??h;return `background:linear-gradient(135deg,hsl(${a} ${m.s}% 52%),hsl(${(a+m.d)%360} ${m.s}% ${m.l}%))`};
+const PH='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/></svg>';
+const pic=(c,x)=>{const u=IMG[x.n]||CIMG[c.n];return u?`<img src="${u}" alt="${x.n}" loading="lazy">`:PH};
+const HOT=new Set(['Bandeja paisa','Patacón Shalem','Trucha Shalem','Café Renacer','Papas de la Casa','Picada de la Casa','Mojito Maracuyá','Brownie con Helado']);
+const ings=(c,x)=>[...new Set([...x.i,...c.i])].map(ti);
+function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('on',s.id===id));scrollTo(0,0)}
+const card=(c,k,j)=>{const x=c.it[j],g=ings(c,x).slice(0,4).join(', ')||cd(c,k);return `<div class="cd" data-n="${x.n.toLowerCase()}" onclick="op(${k},${j})"><div class="tx">${HOT.has(x.n)?`<em>${t('hot')}</em>`:''}<b>${x.n}</b><p>${g}</p><div class="ft"><span class="pr">${F(x.p)}</span></div></div><div class="th2" style="${bg(c.h)}">${pic(c,x)}</div></div>`};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const b=$('#ch'+e.target.id.slice(1));document.querySelectorAll('#chips .on').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#chips').scrollTo({left:b.offsetLeft-70,behavior:'smooth'})}}),{rootMargin:'-25% 0px -65% 0px'});
+function theme(){T[TK].v.forEach((v,i)=>document.documentElement.style.setProperty('--'+['bg','card','ink','mute','ac','line'][i],v))}
+function render(){theme();document.documentElement.lang=L;$('#lb').textContent=L=='es'?'EN':'ES';
+document.querySelectorAll('[data-t]').forEach(e=>e.innerHTML=t(e.dataset.t));$('#q').placeholder=t('ph');
+if(LOGO)$('.mk').innerHTML=`<img src="${LOGO}" alt="">`;
+const d=DAILY[L];$('#dl').innerHTML=`<small>${d.t} · ${new Date().toLocaleDateString(L,{weekday:'long',day:'numeric',month:'long'})}</small><h3 class="serif">${d.t}</h3><ul>${d.i.map(i=>`<li>${i}</li>`).join('')}</ul><b class="pr">${F(DAILY.price)}</b>`;
+$('#chips').innerHTML=D.map((c,k)=>`<button id="ch${k}" onclick="sc(${k})">${cn(c,k)}</button>`).join('');
+$('#mb').innerHTML=D.map((c,k)=>`<section class="cs" id="s${k}"><div class="sh" onclick="this.parentNode.classList.toggle('cl')"><div><h3 class="serif">${cn(c,k)}</h3><small>${cg(c,k)} · ${cd(c,k)}</small></div><i>⌃</i></div><div class="bd">${c.it.map((_,j)=>card(c,k,j)).join('')}</div></section>`).join('');
+io.disconnect();document.querySelectorAll('.cs').forEach(s=>io.observe(s));srch($('#q').value)}
+function setLang(){L=L=='es'?'en':'es';render()}
+function sc(k){const s=$('#s'+k);s.classList.remove('cl');scrollTo({top:s.getBoundingClientRect().top+scrollY-$('.stk').offsetHeight-4,behavior:'smooth'})}
+function srch(v){v=v.trim().toLowerCase();document.querySelectorAll('.cs').forEach(s=>{let n=0;s.querySelectorAll('.cd').forEach(d=>{const h=!d.dataset.n.includes(v);d.style.display=h?'none':'';if(!h)n++});s.style.display=n?'':'none';if(v&&n)s.classList.remove('cl')})}
+function op(k,j){const c=D[k],x=c.it[j],ing=ings(c,x);
+$('#sb').innerHTML=`<div class="hero" style="${bg(c.h)}">${pic(c,x)}<button class="x" onclick="cl()">✕</button></div><div class="sb"><h2 class="serif">${x.n}</h2><span class="pr">${F(x.p)}</span>
+<h3>${t('desc')}</h3><p>${cd(c,k)}</p><span class="ch">⚖️ ${cg(c,k)}</span><span class="ch">${cn(c,k)}</span>
+${ing.length?`<h3>${t('ing')}</h3>${ing.map(i=>`<span class="ch">${i}</span>`).join('')}`:''}
+${x.v.length?`<h3>${t('opt')}</h3>${x.v.map(i=>`<span class="ch">${ti(i)}</span>`).join('')}`:''}
+</div>`;$('#sh').classList.add('on')}
+function cl(){$('#sh').classList.remove('on')}
+render();
+</script></body></html>
