@@ -22,10 +22,10 @@ h1,h2,.serif{font-family:Georgia,"Times New Roman",serif}
 #w p{color:var(--mute);margin:10px 0 36px;letter-spacing:3px;text-transform:uppercase;font-size:12px}
 .btn{background:var(--ac);color:#fff;border:0;border-radius:99px;padding:17px 56px;font-size:19px;font-weight:600;letter-spacing:1px;box-shadow:0 10px 24px rgba(181,83,42,.35)}
 .btn:active{transform:scale(.96)}
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:12px 16px;display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:12px 70px 12px 16px;display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line)}
 .bk{background:var(--card);border:1px solid var(--line);color:var(--ink);width:42px;height:42px;border-radius:50%;font-size:20px;flex:none}
 .top h2{margin:0;font-size:22px;flex:1}
-input{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px}
+input,textarea{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px}
 .pad{padding:14px 16px 40px}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
 @media(min-width:620px){.grid{grid-template-columns:repeat(3,1fr)}}
@@ -55,10 +55,10 @@ input{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--lin
 .cd{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px;margin-bottom:12px;box-shadow:0 4px 14px rgba(0,0,0,.06);transition:transform .15s}.cd:active{transform:scale(.98)}
 .tx{flex:1;display:flex;flex-direction:column;min-width:0}.tx b{font-size:17px}.tx p{color:var(--mute);font-size:14px;margin:4px 0 10px;line-height:1.4}
 .tx em{font-style:normal;font-size:11px;color:var(--ac);font-weight:700;margin-bottom:2px}
-.ft{display:flex;align-items:center;gap:12px;margin-top:auto}
+.ft{display:flex;align-items:center;gap:12px;margin-top:auto;justify-content:space-between}
 .th2{width:104px;height:104px;border-radius:18px;display:grid;place-items:center;font-size:50px;flex:none;align-self:center;box-shadow:inset 0 0 30px rgba(255,255,255,.18)}
-.ad{width:34px;height:34px;border-radius:50%;border:0;background:var(--ac);color:#fff;font-size:22px;line-height:1}
-#cb{position:fixed;left:50%;transform:translate(-50%,140px);bottom:calc(16px + env(safe-area-inset-bottom,0px));width:min(92%,520px);background:var(--ac);color:#fff;border-radius:99px;padding:16px 22px;display:flex;justify-content:space-between;z-index:10;transition:.3s;box-shadow:0 10px 26px rgba(0,0,0,.3)}#cb.on{transform:translate(-50%,0)}
+.ad{width:34px;height:34px;border-radius:50%;border:0;background:var(--ac);color:#fff;font-size:22px;line-height:1;cursor:pointer;flex:none}
+#cb{position:fixed;left:50%;transform:translate(-50%,140px);bottom:calc(16px + env(safe-area-inset-bottom,0px));width:min(92%,520px);background:var(--ac);color:#fff;border-radius:99px;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;z-index:10;transition:.3s;box-shadow:0 10px 26px rgba(0,0,0,.3);cursor:pointer;border:0;font:inherit}#cb.on{transform:translate(-50%,0)}
 #ts{position:fixed;top:calc(70px + env(safe-area-inset-top,0px));left:50%;transform:translate(-50%,-30px);opacity:0;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;z-index:30;transition:.3s;font-size:14px;pointer-events:none;white-space:nowrap}#ts.on{opacity:1;transform:translate(-50%,0)}
 .or{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
 .q{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:18px}
@@ -70,6 +70,34 @@ input{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--lin
 .dc small{color:var(--ac);text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:700}.dc h3{margin:6px 0;font-size:24px}.dc ul{margin:8px 0;padding-left:18px;line-height:1.7}.dc .pr{font-size:20px}
 .th2,.hero{overflow:hidden}.th2 img,.hero img{width:100%;height:100%;object-fit:cover;display:block}.hero img{position:absolute;inset:0}
 .th2 svg{width:42%;color:#fff;opacity:.6}.hero svg{width:90px;color:#fff;opacity:.6}
+.btn2{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:14px 40px;font-size:16px;font-weight:600;margin-top:14px;cursor:pointer}
+.ch.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+#tp{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:25}
+#tp.on{display:flex}
+.tg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 18px}
+.tg button{height:64px;border-radius:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;font-weight:700;position:relative;cursor:pointer}
+.tg button.busy::after{content:'';position:absolute;top:8px;right:8px;width:8px;height:8px;border-radius:50%;background:var(--ac)}
+.tg button.sel{background:var(--ac);color:#fff;border-color:var(--ac)}
+.oc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;margin-bottom:14px}
+.oc .sh{border:0;padding:0 0 8px;margin:0}
+.badge{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:8px 12px;font-size:13px;font-weight:700;cursor:pointer}
+.badge.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+#act{cursor:pointer}
+.ghost{width:100%;margin-top:10px;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:12px;font-weight:600;cursor:pointer;font-size:15px}
+.or b{font-size:15px}.or .pr{font-size:14px}
+textarea{font-family:inherit;resize:none;line-height:1.4;display:block;margin-top:8px;overflow:hidden}
+#pp{display:none;gap:8px;align-items:center;overflow-x:auto;padding:8px 16px;scrollbar-width:none;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--ac) 9%,var(--bg))}#pp::-webkit-scrollbar{display:none}
+#pp button{flex:none;border-radius:99px;padding:7px 13px;background:var(--card);color:var(--ink);font-size:14px;font-weight:600;border:1px solid var(--line)}
+#pp .on{background:var(--ac);color:#fff;border-color:var(--ac)}#pp i{font-style:normal;margin-left:6px;opacity:.75;font-size:12px}
+#pp .pl{border-style:dashed;color:var(--ac);padding:7px 14px}#pp .rx{margin-left:8px;opacity:.85;font-size:12px}
+.pb{border-top:1px dashed var(--line);padding:12px 0 4px}
+.ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}.ph span{display:flex;align-items:center;gap:8px}.ph small{color:var(--ac);font-weight:700}
+.rm{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--mute);font-size:12px;padding:0;line-height:1;cursor:pointer}
+.mt{color:var(--mute);font-size:14px;margin:6px 0}
+.mv{margin-top:6px;font-size:12px;padding:4px 8px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.acts .ghost{width:auto;margin:0;padding:8px 14px;font-size:13px}
+.oc .sh{cursor:pointer}.oc.cl .bd{display:none}.oc.cl .sh i{transform:rotate(180deg)}.oc .sh i{padding:4px 8px}
+#cf{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:40}#cf.on{display:flex}
 </style></head><body>
 <div id="ctl"><button onclick="setLang()" id="lb"></button></div>
 <section id="w" class="scr on">
@@ -79,31 +107,38 @@ input{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--lin
   <h1 class="serif">Shalem</h1>
   <p>Café · Bar · Renacer<br><span data-t="tag"></span></p>
   <button class="btn" data-t="menu" onclick="go('m')"></button>
+  <button class="btn2" data-t="take" onclick="pickMesa(()=>go('m'))"></button>
+  <div id="act" class="dc" style="display:none" onclick="go('o')"></div>
   <div id="dl" class="dc"></div>
 </section>
-<section id="m" class="scr"><div class="stk"><div class="top"><button class="bk" onclick="go('w')">‹</button><h2 class="serif" data-t="title"></h2></div><nav id="chips"></nav></div>
+<section id="m" class="scr"><div class="stk"><div class="top"><button class="bk" onclick="go('w')">‹</button><button id="tm" class="badge" onclick="pickMesa()"></button><button id="ap" type="button" class="badge" style="display:none" onclick="addPerson()">👤＋</button><h2 class="serif" data-t="title"></h2></div><div id="pp"></div><nav id="chips"></nav></div>
 <div class="pad"><input id="q" type="search" oninput="srch(this.value)"><p data-t="hint" style="color:var(--mute);font-size:14px;margin:10px 2px 0"></p><div id="mb"></div><p class="ftr" data-t="foot"></p></div></section>
+<section id="o" class="scr"><div class="stk"><div class="top"><button class="bk" onclick="go('m')">‹</button><h2 class="serif" data-t="pedidos"></h2></div></div><div class="pad" id="ob"></div></section>
 <div id="sh" onclick="if(event.target===this)cl()"><div class="sheet" id="sb"></div></div>
+<div id="tp" onclick="if(event.target===this)closeTp()"><div class="sheet"><div class="sb"><h2 class="serif" id="thp"></h2><div class="tg" id="tg"></div><input id="mc" type="number" min="1" inputmode="numeric" onkeydown="if(event.key==='Enter')okMesa()"><button class="btn" style="width:100%;margin-top:14px" onclick="okMesa()" data-t="usar"></button></div></div></div>
+<div id="cf" onclick="if(event.target===this)cfNo()"><div class="sheet"><div class="sb"><p id="cfm" style="font-size:17px;line-height:1.4;margin:6px 0 4px;text-align:center"></p><div class="acts" style="justify-content:center;margin-top:16px"><button type="button" class="ghost" id="cfn" onclick="cfNo()"></button><button type="button" class="btn" id="cfy" style="padding:10px 26px;font-size:15px;box-shadow:none" onclick="cfYes()"></button></div></div></div></div>
+<button id="cb" type="button"></button>
+<div id="ts"></div>
 <script>
 const D=[
-["Carnes y Asados","🥩","Carne de 300 g","Plato fuerte servido con papa al vapor y plátano maduro.","Papa al vapor,Plátano maduro",`Bandeja paisa;40;Frijoles,Arroz,Chicharrón,Huevo,Chorizo,Arepa,Aguacate
-Bandeja paisa personal;35;Frijoles,Arroz,Chicharrón,Huevo,Arepa
-Lomo de res a la plancha;44;Lomo de res
-Lomo de res agridulce;46;Lomo de res
-Lomo de cerdo a la plancha;42;Lomo de cerdo
-Lomo de cerdo agridulce;45;Lomo de cerdo
-Lomo de cerdo gratinado champiñón;48;Lomo de cerdo
-Lomo de cerdo gratinado;46;Lomo de cerdo
-Costilla BBQ;44;Costilla de cerdo
-Filete de pollo a la plancha;42;Pechuga de pollo
-Filete de pollo champiñón;44;Pechuga de pollo
-Filete de pollo gratinado;46;Pechuga de pollo
-Filete de pollo champiñón gratinado;48;Pechuga de pollo
-Chuleta de pollo;39;Pollo apanado
-Chuleta de cerdo;39;Cerdo apanado
-Churrasco;48;Corte de res
-Lomo de res gratinado;48;Lomo de res
-Lomo de res gratinado champiñón;48;Lomo de res`],
+["Carnes y Asados","🥩","Carne de 300 g","Plato fuerte servido con papa al vapor y plátano maduro.","Papa al vapor,Plátano maduro",`Bandeja paisa;49.5;Frijoles,Arroz,Chicharrón,Huevo,Chorizo,Arepa,Aguacate
+Bandeja paisa personal;39.5;Frijoles,Arroz,Chicharrón,Huevo,Arepa
+Lomo de res a la plancha;52;Lomo de res
+Lomo de res agridulce;56;Lomo de res
+Lomo de cerdo a la plancha;47;Lomo de cerdo
+Lomo de cerdo agridulce;50;Lomo de cerdo
+Lomo de cerdo gratinado champiñón;53;Lomo de cerdo
+Lomo de cerdo gratinado;49;Lomo de cerdo
+Costilla BBQ;49.5;Costilla de cerdo
+Filete de pollo a la plancha;47;Pechuga de pollo
+Filete de pollo champiñón;53;Pechuga de pollo
+Filete de pollo gratinado;49;Pechuga de pollo
+Filete de pollo champiñón gratinado;53;Pechuga de pollo
+Chuleta de pollo;45;Pollo apanado
+Chuleta de cerdo;45;Cerdo apanado
+Churrasco;55;Corte de res
+Lomo de res gratinado;56;Lomo de res
+Lomo de res gratinado champiñón;59;Lomo de res`],
 ["Patacones","🍌","Porción generosa","Patacón crocante de plátano verde con el topping que prefieras.","Plátano verde",`Patacón con camarón;39;Camarón
 Patacón con champiñón;37
 Patacón mixto;42;Carne,Pollo,Queso
@@ -302,16 +337,30 @@ Jarra de Sangría;75;Vino,Frutas`]
 D.forEach(c=>c.it.forEach(x=>x.c=c));
 /* ===== CONFIGURACIÓN (edita aquí) ===== */
 const LOGO='';                 // ruta o data-URI del logo (círculo de bienvenida)
-const IMG={ /* 'Bandeja paisa':'img/bandeja.jpg' */ };   // foto por producto (nombre exacto de la carta)
-const CIMG={ /* 'Carnes y Asados':'img/carnes.jpg' */ }; // foto por categoría (se usa si el producto no tiene)
-const DAILY={price:22000,
- es:{t:'Menú del día',i:['Consomé de pollo','Lomo de cerdo a la plancha con papa y plátano','Limonada natural']},
- en:{t:"Today's special",i:['Chicken consommé','Grilled pork loin with potato and plantain','Fresh lemonade']}};
+/* FOTOS: la ruta se arma sola → IMG_BASE / carpeta-de-categoria / nombre-del-plato . IMG_EXT
+   Ej: ./images/carnes-y-asados/bandeja-paisa.webp
+   (minúsculas, sin tildes, espacios y símbolos → guion). Si el archivo no existe, se ve el diseño de color. */
+const IMG_BASE='./images';     // carpeta raíz de las fotos
+const IMG_EXT='webp';          // extensión única para todas las fotos
+const IMG={   // excepción manual por plato (nombre exacto de la carta) → nombres cortos para los platos con nombre largo
+ 'Caldo de costilla, arepa, pan, chocolate':'./images/desayunos/caldo-de-costilla.webp',
+ 'Huevos al gusto, arepa con queso, chocolate o café':'./images/desayunos/huevos-al-gusto.webp',
+ 'Calentado, huevos al gusto, arepa con queso, chocolate o café':'./images/desayunos/calentado-huevos.webp',
+ 'Calentado, chorizo o carne, huevos al gusto, arepa con queso, chocolate o café':'./images/desayunos/calentado-chorizo-huevos.webp',
+ 'Oreo / Brownie / Alfajor / Chocoramo / Cheesecake / Frutos Rojos':'./images/malteadas/malteada-oreo-brownie-y-mas.webp'
+};
+const N_MESAS=16;              // cantidad de mesas en el selector (puedes escribir otro número)
+const DAILY={price:26000 ,
+ es:{t:'Menú del día',i:['Sancocho con espinazo de cerdo, arroz, ensalada y banano','Ajiaco con pollo a la plancha, arroz, ensalada y banano','Combo de trucha: trucha, patacón, arroz y ensalada'],
+  w:['Mondongo, cerdo a la plancha, arroz y ensalada'],wn:'Solo sábados y domingos'},
+ en:{t:"Today's special",i:['Sancocho soup with pork spine, rice, salad and banana','Ajiaco soup with grilled chicken, rice, salad and banana','Trout combo: trout, patacón, rice and salad'],
+  w:['Mondongo (tripe soup), grilled pork, rice and salad'],wn:'Weekends only'}};
+const dailyList=()=>{const wk=[0,6].includes(new Date().getDay());return{es:DAILY.es.i.concat(wk?DAILY.es.w:[]),en:DAILY.en.i.concat(wk?DAILY.en.w:[]),wk}};
 // Paletas: [fondo, tarjeta, texto, texto suave, acento, línea]; h = tono fijo para placeholders (null = distinto por categoría)
 const T={cafe:{n:'Café',v:['#faf3e8','#ffffff','#2b1d14','#8a7566','#b5532a','#eadfce'],h:null,s:62,d:35,l:38}};
 /* ===== TEXTOS ===== */
-const U={es:{menu:'Menú',tag:'Salento, Quindío',title:'Nuestra <span class="ac">carta</span>',ph:'🔍 ¿Qué se te antoja hoy?',hint:'Toca un plato para ver su foto, ingredientes y detalles',foot:'Precios en COP con impuesto al consumo del 8% incluido.<br>Solo tarjetas nacionales · Pago con tarjeta desde $50.000<br>@shalemrestaurantebar',hot:'★ FAVORITO',add:'Agregar al pedido',ord:'Mi pedido',tot:'Total',emp:'Aún no has agregado nada. ¡Todo se ve delicioso!',ok:'Confirmar pedido',demo:'Demo: el pedido no se envía',desc:'Descripción',ing:'Ingredientes',opt:'Opciones',view:'Ver pedido'},
-en:{menu:'Menu',tag:'Salento, Quindío, Colombia',title:'Our <span class="ac">menu</span>',ph:'🔍 What are you craving?',hint:'Tap a dish to see its photo, ingredients and details',foot:'Prices in COP, 8% consumption tax included.<br>Colombian cards only · Card payments over $50,000<br>@shalemrestaurantebar',hot:'★ FAVORITE',add:'Add to order',ord:'My order',tot:'Total',emp:"You haven't added anything yet. Everything looks delicious!",ok:'Place order',demo:'Demo: the order is not sent',desc:'Description',ing:'Ingredients',opt:'Options',view:'View order'}};
+const U={es:{menu:'Menú',tag:'Salento, Quindío',title:'Nuestra <span class="ac">carta</span>',ph:'🔍 ¿Qué se te antoja hoy?',hint:'El + agrega a la mesa. Toca el plato para ver foto y detalles.',foot:'Precios en COP con impuesto al consumo del 8% incluido.<br>tarjetas nacionales · Pago con tarjeta desde $50.000<br>@shalemrestaurantebar',hot:'★ FAVORITO',add:'Agregar al pedido',ord:'Pedidos',tot:'Total',emp:'Aún no has agregado nada.',ok:'Confirmar pedido',demo:'Los pedidos solo viven mientras la página esté abierta.',desc:'Descripción',ing:'Ingredientes',opt:'Opciones',view:'Ver pedidos',take:'Tomar pedido',pedidos:'Pedidos',mesa:'Mesa',pickmesa:'¿A qué mesa?',cerrar:'Cerrar mesa',vacio:'No hay pedidos abiertos. Toma uno desde la carta.',pickopt:'Elige una opción',added:'Agregado a mesa',activos:'mesas activas',nota:'Nota General (opcional)',addmore:'Seguir agregando',otra:'Otra mesa',usar:'Usar esta mesa',padd:'Persona agregada:',quitar:'¿Quitar esta persona? Sus platos y notas pasarán a P1.',quitarb:'Quitar persona',addper:'Persona',addp:'Agregar a',detp:'Detalles (término, detalles individuales)',sinplatos:'Aún sin platos',cerrarq:'¿Cerrar mesa',si:'Sí',no:'Cancelar'},
+en:{menu:'Menu',tag:'Salento, Quindío, Colombia',title:'Our <span class="ac">menu</span>',ph:'🔍 What are you craving?',hint:'Tap + to add to the table. Tap the dish for photo and details.',foot:'Prices in COP, 8% consumption tax included.<br>International cards only · Card payments over $50,000<br>@shalemrestaurantebar',hot:'★ FAVORITE',add:'Add to order',ord:'Orders',tot:'Total',emp:'Nothing added yet.',ok:'Place order',demo:'Orders only last while this page stays open.',desc:'Description',ing:'Ingredients',opt:'Options',view:'View orders',take:'Take order',pedidos:'Orders',mesa:'Table',pickmesa:'Which table?',cerrar:'Close table',vacio:'No open orders. Take one from the menu.',pickopt:'Choose an option',added:'Added to table',activos:'active tables',nota:'General note (optional)',addmore:'Add more',otra:'Another table',usar:'Use this table',padd:'Person added:',quitar:'Remove this person? Their dishes and notes will move to P1.',quitarb:'Remove person',addper:'Person',addp:'Add to',detp:'Details (doneness, no onion…)',sinplatos:'No dishes yet',cerrarq:'Close table',si:'Yes',no:'Cancel'}};
 const E=`Meats & Grills|300 g cut|Main dish served with steamed potato and ripe plantain.
 Patacones|Generous portion|Crispy green plantain tostón with the topping of your choice.
 Breakfasts|Single serving|Traditional breakfast to start the day in Salento.
@@ -337,35 +386,316 @@ Fries|Sharing plate|Crispy fries with all the toppings.
 Nachos|Sharing plate|Crunchy chips with melted cheese.
 Waffles & Crepes|Base + toppings|Build your own: pick a base and add toppings.
 Cocktails|Glass|Made fresh by our bar.`.split('\n').map(l=>l.split('|'));
-const EI=new Map(`Papa al vapor=Steamed potato;Plátano maduro=Ripe plantain;Frijoles=Beans;Arroz=Rice;Chicharrón=Pork crackling;Huevo=Egg;Huevos=Eggs;Chorizo=Sausage;Aguacate=Avocado;Lomo de res=Beef loin;Lomo de cerdo=Pork loin;Costilla de cerdo=Pork ribs;Pechuga de pollo=Chicken breast;Pollo apanado=Breaded chicken;Cerdo apanado=Breaded pork;Corte de res=Beef cut;Plátano verde=Green plantain;Camarón=Shrimp;Carne=Beef;Pollo=Chicken;Queso=Cheese;Especialidad de la casa=House specialty;Caldo de costilla=Rib broth;Pan=Bread;Arepa con queso=Cheese arepa;Chocolate o café=Chocolate or coffee;Chorizo o carne=Sausage or beef;Jamón=Ham;Leche=Milk;Salsa thai=Thai sauce;Vegetales salteados=Sautéed vegetables;Champiñones=Mushrooms;Proteína vegetal=Plant protein;Ensalada=Salad;Vegetales frescos=Fresh vegetables;Vegetales=Vegetables;Pescado fresco=Fresh fish;Ajo=Garlic;Mantequilla=Butter;Piña=Pineapple;Salsa de mango=Mango sauce;Salsa de maracuyá=Passion fruit sauce;Crema de café=Coffee cream;Salsa ahumada=Smoked sauce;Calamar=Squid;Mariscos=Seafood;Salsa bechamel=Béchamel sauce;Queso gratinado=Melted cheese;Receta de la casa=House recipe;Pollo empanizado=Breaded chicken;Papas a la francesa=French fries;Salchicha=Sausage;Papas=Potatoes;Papa=Potato;Yuca=Cassava;Carnes=Meats;Selección de la casa=House selection;Crema de leche=Cream;Lechuga=Lettuce;Aderezo de la casa=House dressing;Crutones=Croutons;Aderezo César=Caesar dressing;Fruta natural=Fresh fruit;Agua=Water;Limón=Lemon;Azúcar=Sugar;Naranja=Orange;Coco=Coconut;Cereza=Cherry;Mango biche=Green mango;Hierbabuena=Mint;Cerveza=Beer;Gaseosa=Soda;Maíz=Corn;Vino=Wine;Frutas=Fruit;Cerveza fría=Cold beer;Hielo=Ice;Café espresso=Espresso;Crema chantilly=Whipped cream;Leche espumada=Steamed milk;Vainilla=Vanilla;Licor=Liqueur;Masmelos=Marshmallows;Arequipe=Dulce de leche;Leche condensada=Condensed milk;Crema=Cream;Leche texturizada=Steamed milk;Canela=Cinnamon;Frutos rojos=Red berries;Frutos amarillos=Yellow fruits;Especias=Spices;Hierbas=Herbs;Café=Coffee;Helado=Ice cream;Sal=Salt;Té=Tea;Mora=Blackberry;Fresa=Strawberry;Maracuyá=Passion fruit;Queso crema=Cream cheese;Galleta=Cookie;Harina de maíz=Corn flour;Tocineta=Bacon;Salsa de la casa=House sauce;Queso cheddar=Cheddar cheese;Crema agria=Sour cream;Frijol refrito=Refried beans;Frijol=Beans;Totopos=Tortilla chips;Carne molida=Ground beef;Masa casera=Homemade batter;Ron=Rum;Granadina=Grenadine;Curaçao azul=Blue curaçao;Ginebra=Gin;Agua tónica=Tonic water;Res=Beef;Cerdo=Pork;Salsa=Sauce;Seis alas=Six wings;Doce alas=Twelve wings;Alas de pollo=Chicken wings;Chocolate=Chocolate;Panela=Panela;Hogao=Hogao (creole sauce);Calentado=Calentado (rice & beans)`.split(';').map(x=>x.split('=')));
+const EI=new Map(`Papa al vapor=Steamed potato;Plátano maduro=Ripe plantain;Frijoles=Beans;Arroz=Rice;Chicharrón=Pork crackling;Huevo=Egg;Huevos=Eggs;Chorizo=Sausage;Aguacate=Avocado;Lomo de res=Beef loin;Lomo de cerdo=Pork loin;Costilla de cerdo=Pork ribs;Pechuga de pollo=Chicken breast;Pollo apanado=Breaded chicken;Cerdo apanado=Breaded pork;Corte de res=Beef cut;Plátano verde=Green plantain;Camarón=Shrimp;Carne=Beef;Pollo=Chicken;Queso=Cheese;Especialidad de la casa=House specialty;Caldo de costilla=Rib broth;Pan=Bread;Arepa con queso=Cheese arepa;Chocolate o café=Chocolate or coffee;Chorizo o carne=Sausage or beef;Jamón=Ham;Leche=Milk;Salsa thai=Thai sauce;Vegetales salteados=Sautéed vegetables;Champiñones=Mushrooms;Proteína vegetal=Plant protein;Ensalada=Salad;Vegetales frescos=Fresh vegetables;Vegetales=Vegetables;Pescado fresco=Fresh fish;Ajo=Garlic;Mantequilla=Butter;Piña=Pineapple;Salsa de mango=Mango sauce;Salsa de maracuyá=Passion fruit sauce;Crema de café=Coffee cream;Salsa ahumada=Smoked sauce;Calamar=Squid;Mariscos=Seafood;Salsa bechamel=Béchamel sauce;Queso gratinado=Melted cheese;Receta de la casa=House recipe;Pollo empanizado=Breaded chicken;Papas a la francesa=French fries;Salchicha=Sausage;Papas=Potatoes;Papa=Potato;Yuca=Cassava;Carnes=Meats;Selección de la casa=House selection;Crema de leche=Cream;Lechuga=Lettuce;Aderezo de la casa=House dressing;Crutones=Croutons;Aderezo César=Caesar dressing;Fruta natural=Fresh fruit;Agua=Water;Limón=Lemon;Azúcar=Sugar;Naranja=Orange;Coco=Coconut;Cereza=Cherry;Mango biche=Green mango;Hierbabuena=Mint;Cerveza=Beer;Gaseosa=Soda;Maíz=Corn;Vino=Wine;Frutas=Fruit;Cerveza fría=Cold beer;Hielo=Ice;Café espresso=Espresso;Crema chantilly=Whipped cream;Leche espumada=Steamed milk;Vainilla=Vanilla;Licor=Liqueur;Masmelos=Marshmallows;Arequipe=Dulce de leche;Leche condensada=Condensed milk;Crema=Cream;Leche texturizada=Steamed milk;Canela=Cinnamon;Frutos rojos=Red berries;Frutos amarillos=Yellow fruits;Especias=Spices;Hierbas=Herbs;Café=Coffee;Helado=Ice cream;Sal=Salt;Té=Tea;Mora=Blackberry;Fresa=Strawberry;Maracuyá=Passion fruit;Queso crema=Cream cheese;Galleta=Cookie;Harina de maíz=Corn flour;Tocineta=Bacon;Salsa de la casa=House sauce;Queso cheddar=Cheddar cheese;Crema agria=Sour cream;Frijol refrito=Refried beans;Frijol=Beans;Totopos=Tortilla chips;Carne molida=Ground beef;Masa casera=Homemade batter;Ron=Rum;Granadina=Grenadine;Curaçao azul=Blue curaçao;Ginebra=Gin;Agua tónica=Tonic water;Res=Beef;Cerdo=Pork;Salsa=Sauce;Seis alas=Six wings;Doce alas=Twelve wings;Alas de pollo=Chicken wings;Chocolate=Chocolate;Panela=Panela;Hogao=Hogao (creole sauce);Calentado=Calentado (rice & beans);Arepa=Arepa (corn cake);Milo=Milo (chocolate malt drink);Tortilla=Tortilla;Mojarra=Mojarra (tilapia);Patacón=Patacón (fried green plantain);Trucha=Trout;Super patacón=Super patacón (large fried plantain);Cilantro=Cilantro;Tomate=Tomato;Parmesano=Parmesan;Caramelo=Caramel;Chantilly=Whipped cream;Nutella=Nutella;Whisky=Whisky;Aguardiente=Aguardiente (anise liquor);Espresso=Espresso;Soda=Soda;Mango=Mango;Salsa BBQ=BBQ sauce;Guacamole=Guacamole;Pico de gallo=Pico de gallo;Cheddar=Cheddar;Tequila=Tequila;Vodka=Vodka;Cola=Cola;Frutos Rojos=Red berries;Oreo=Oreo;Brownie=Brownie;Alfajor=Alfajor;Chocoramo=Chocoramo;Cheesecake=Cheesecake;Poker=Poker;Costeña=Costeña;Club Colombia=Club Colombia;Águila=Águila`.split(';').map(x=>x.split('=')));
+const EN=new Map(`Menú del día=Today's special
+Bandeja paisa=Bandeja paisa (Paisa platter)
+Bandeja paisa personal=Bandeja paisa (individual)
+Lomo de res a la plancha=Grilled beef loin
+Lomo de res agridulce=Sweet & sour beef loin
+Lomo de cerdo a la plancha=Grilled pork loin
+Lomo de cerdo agridulce=Sweet & sour pork loin
+Lomo de cerdo gratinado champiñón=Mushroom au gratin pork loin
+Lomo de cerdo gratinado=Au gratin pork loin
+Costilla BBQ=BBQ ribs
+Filete de pollo a la plancha=Grilled chicken fillet
+Filete de pollo champiñón=Chicken fillet with mushrooms
+Filete de pollo gratinado=Au gratin chicken fillet
+Filete de pollo champiñón gratinado=Mushroom au gratin chicken fillet
+Chuleta de pollo=Breaded chicken cutlet
+Chuleta de cerdo=Breaded pork cutlet
+Churrasco=Churrasco steak
+Lomo de res gratinado=Au gratin beef loin
+Lomo de res gratinado champiñón=Mushroom au gratin beef loin
+Patacón con camarón=Patacón with shrimp
+Patacón con champiñón=Patacón with mushrooms
+Patacón mixto=Mixed patacón
+Patacón con hogao=Patacón with hogao
+Patacón con agridulce=Patacón with sweet & sour sauce
+Patacón con queso=Patacón with cheese
+Patacón con carne=Patacón with beef
+Patacón con carne y queso=Patacón with beef and cheese
+Patacón con pollo=Patacón with chicken
+Patacón con pollo y queso=Patacón with chicken and cheese
+Patacón con todo=Patacón with everything
+Patacón Shalem=Shalem patacón
+Caldo de costilla, arepa, pan, chocolate=Rib broth, arepa, bread, hot chocolate
+Huevos al gusto, arepa con queso, chocolate o café=Eggs your way, cheese arepa, chocolate or coffee
+Calentado, huevos al gusto, arepa con queso, chocolate o café=Calentado, eggs your way, cheese arepa, chocolate or coffee
+Calentado, chorizo o carne, huevos al gusto, arepa con queso, chocolate o café=Calentado, sausage or beef, eggs your way, cheese arepa, chocolate or coffee
+Sandwich y Milo=Sandwich and Milo
+Wrap Thai=Thai wrap
+Quesadilla=Quesadilla
+Almuerzo Vegetariano=Vegetarian lunch
+Mojarra frita=Fried mojarra (tilapia)
+Trucha frita=Fried trout
+Trucha a la plancha=Grilled trout
+Trucha al ajo a la plancha=Garlic grilled trout
+Trucha Criolla a la plancha=Creole grilled trout
+Trucha al Ajillo en Callana=Garlic trout in callana (skillet)
+Trucha al Ajillo con Champiñones=Garlic trout with mushrooms
+Trucha al Ajillo Mixta=Mixed garlic trout
+Trucha Criolla en Callana=Creole trout in callana (skillet)
+Trucha Hawaiana=Hawaiian trout
+Trucha en Salsa de Mango=Trout in mango sauce
+Trucha en Salsa de Maracuyá=Trout in passion fruit sauce
+Trucha en Crema de Café=Trout in coffee cream
+Trucha Ahumada=Smoked trout
+Trucha Marinera=Seafood trout
+Trucha Gratinada=Au gratin trout
+Trucha Gratinada Mixta=Mixed au gratin trout
+Trucha Shalem=Shalem trout
+Trucha Gratinada Camarón=Shrimp au gratin trout
+Trucha Gratinada Champiñón=Mushroom au gratin trout
+Nuggets de Pollo=Chicken nuggets
+Filetico de Pollo=Little chicken fillet
+Salchipapa=Salchipapa (sausage & fries)
+Porción Yuca con Hogao=Cassava with hogao
+Porción de Arepas con Hogao=Arepas with hogao
+Porción Chorizo=Sausage portion
+Porción Patacón=Patacón portion
+Porción Papas a la Francesa=French fries portion
+Picada para 4=Sharing platter for 4
+Picada para 2=Sharing platter for 2
+Picada de la Casa=House sharing platter
+Consomé de Pollo=Chicken consommé
+Crema de Trucha=Cream of trout soup
+Ensaladas::De la Casa=House salad
+César=Caesar salad
+Porción de Arroz=Side of rice
+Porción de Ensalada=Side of salad
+Porción Agridulce=Side of sweet & sour sauce
+Porción de Hogao=Side of hogao
+Porción de Frijol=Side of beans
+Porción de Champiñón=Side of mushrooms
+Porción de Chicharrón=Side of pork crackling
+Porción de Queso=Side of cheese
+Porción de Camarón=Side of shrimp
+Porción de Salsa=Side of sauce
+Jugos Naturales en Agua=Fresh juices (water-based)
+Jugos Naturales en Leche=Fresh juices (milk-based)
+Limonada Natural=Fresh lemonade
+Jugo de Naranja=Orange juice
+Limonada de Coco=Coconut lemonade
+Limonada de Cereza=Cherry lemonade
+Limonada de Mango Biche=Green mango lemonade
+Limonada de Hierbabuena=Mint lemonade
+Jarra de Jugo en Agua=Pitcher of juice (water-based)
+Jarra de Jugo en Leche=Pitcher of juice (milk-based)
+Jarra de Refajo=Pitcher of refajo
+Sirope=Syrup
+Mazamorra=Mazamorra (corn drink)
+Aguapanela con Queso=Aguapanela with cheese
+Gaseosa=Soda
+Jugo Hit=Hit juice
+Sangría Copa=Glass of sangria
+Sangría=Sangria
+Cervezas=Beers
+Cerveza Artesanal=Craft beer
+Espresso=Espresso
+Espresso Doble=Double espresso
+Espresso Vienés=Viennese espresso
+Macchiato=Macchiato
+Campesino=Campesino coffee
+Americano=Americano
+Latte=Latte
+Latte Caramelo=Caramel latte
+Latte Vainilla=Vanilla latte
+Cappuccino=Cappuccino
+Cappuccino Vienés=Viennese cappuccino
+Cappuccino Vainilla=Vanilla cappuccino
+Cappuccino Caramelo=Caramel cappuccino
+Cappuccino Licor=Liqueur cappuccino
+Cappuccino Masmelos=Marshmallow cappuccino
+Cappuccino Nutella=Nutella cappuccino
+Cappuccino Arequipe=Dulce de leche cappuccino
+Mochaccino=Mochaccino
+Mochaccino Vienés=Viennese mochaccino
+Mochaccino Licor=Liqueur mochaccino
+Mochaccino Vainilla=Vanilla mochaccino
+Mochaccino Caramelo=Caramel mochaccino
+Mochaccino Masmelos=Marshmallow mochaccino
+Bombóm=Bombón (espresso with condensed milk)
+Carajillo=Carajillo (coffee with liquor)
+Café Irlandés=Irish coffee
+Flat White=Flat white
+Canelazo=Canelazo (hot cinnamon liquor drink)
+Canelazo sin licor=Canelazo (alcohol-free)
+Hervido frutos rojos=Red berry hervido (hot fruit punch)
+Hervido frutos amarillos=Yellow fruit hervido (hot fruit punch)
+Chocolate caliente=Hot chocolate
+Chocolate nevado=Snowy chocolate
+Chocolate masmelos=Marshmallow hot chocolate
+Chocolate con queso=Hot chocolate with cheese
+Aguapanela=Aguapanela (hot panela drink)
+Aguapanela con queso=Aguapanela with cheese
+Milo caliente=Hot Milo
+Aromática pequeña=Herbal tea (small)
+Aromática grande=Herbal tea (large)
+Copa vino caliente=Glass of mulled wine
+Migao=Migao
+Café Renacer=Renacer coffee
+Granizado Café=Coffee slush
+Limonada Café=Coffee lemonade
+Latte Frío=Iced latte
+Latte Frío Vainilla=Iced vanilla latte
+Latte Frío Caramelo=Iced caramel latte
+Affogato=Affogato
+Affogato Licor=Liqueur affogato
+Soda Michelada=Michelada soda
+Soda Frutos Rojos/Amarillos=Red/Yellow fruit soda
+Limonada Vino=Wine lemonade
+Té Hatsu=Hatsu tea
+Mora Fresa=Blackberry strawberry
+Mango Maracuyá=Mango passion fruit
+Vainilla / Chocolate / Café=Vanilla / Chocolate / Coffee
+Oreo / Brownie / Alfajor / Chocoramo / Cheesecake / Frutos Rojos=Oreo / Brownie / Alfajor / Chocoramo / Cheesecake / Red Berries
+Stroganoff=Stroganoff
+Carbonara=Carbonara
+Cerdo BBQ=BBQ pork
+Pollo Champiñón=Chicken & mushroom
+Hawaiano=Hawaiian
+Hawaiano con Pollo=Hawaiian with chicken
+Vegetariano=Vegetarian
+Crepes y Sándwich::De la Casa=House special
+Alas x 6=6 wings
+Alas x 12=12 wings
+Torta de la Casa=House cake
+Torta del Día=Cake of the day
+Cheesecake=Cheesecake
+Brownie Sencillo=Plain brownie
+Brownie con Helado=Brownie with ice cream
+Alfajor=Alfajor
+Papas de la Casa=House fries
+Papas Americanas=American fries
+Papas Mexicanas=Mexican fries
+Sencillos=Plain nachos
+Especiales=Special nachos
+Nachos::De la Casa=House nachos
+Base=Base
+Topping Arequipe=Dulce de leche topping
+Topping Nutella=Nutella topping
+Topping Frutos Rojos=Red berries topping
+Topping Chantilly=Whipped cream topping
+Topping Oreo=Oreo topping
+Topping Barquillos=Wafer topping
+Topping Chips Chocolate=Chocolate chips topping
+Topping M&M=M&M topping
+Topping Masmelos=Marshmallow topping
+Topping Kit Kat=Kit Kat topping
+Topping Banano=Banana topping
+Topping Fresa=Strawberry topping
+Topping Cereza=Cherry topping
+Topping Helado=Ice cream topping
+Piña Colada=Piña colada
+Tequila Sunrise=Tequila sunrise
+Laguna Azul=Blue lagoon
+Margarita=Margarita
+Mojito=Mojito
+Cuba Libre=Cuba libre
+Gin Tonic=Gin & tonic
+Margarita Maracuyá=Passion fruit margarita
+Margarita Frutos Rojos=Red berry margarita
+Mojito Maracuyá=Passion fruit mojito
+Mojito Frutos Rojos=Red berry mojito
+Copa de Vino=Glass of wine
+Copa de Sangría=Glass of sangria
+Jarra de Sangría=Pitcher of sangria`.split('\n').map(l=>{const i=l.indexOf('=');return[l.slice(0,i),l.slice(i+1)]}));
+const dn=(n,c)=>L=='en'?(EN.get((c||'')+'::'+n)||EN.get(n)||n):n;
 /* ===== LÓGICA ===== */
 const $=s=>document.querySelector(s),F=n=>'$'+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let L=(navigator.language||'es').toLowerCase().startsWith('en')?'en':'es',TK='cafe';
+let mesa=null,selOpt='',afterPick=null,uid=1,tt,activa=0;
+const pedidos={},notas={},abierto={},gente={},plegadas={};
 const t=k=>U[L][k],ti=s=>L=='en'?EI.get(s)||s:s,cn=(c,k)=>L=='en'?E[k][0]:c.n,cg=(c,k)=>L=='en'?E[k][1]:c.g,cd=(c,k)=>L=='en'?E[k][2]:c.d;
 const bg=h=>{const m=T[TK],a=m.h??h;return `background:linear-gradient(135deg,hsl(${a} ${m.s}% 52%),hsl(${(a+m.d)%360} ${m.s}% ${m.l}%))`};
 const PH='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/></svg>';
-const pic=(c,x)=>{const u=IMG[x.n]||CIMG[c.n];return u?`<img src="${u}" alt="${x.n}" loading="lazy">`:PH};
+const slug=s=>String(s).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+const imgUrl=(c,x)=>IMG[x.n]||`${IMG_BASE}/${slug(c.n)}/${slug(x.n)}.${IMG_EXT}`;
+const FAIL=new Set();
+function imgFail(el){FAIL.add(el.getAttribute('src'));el.insertAdjacentHTML('afterend',PH);el.remove()}
+const pic=(c,x)=>{const u=imgUrl(c,x);return FAIL.has(u)?PH:`<img src="${esc(u)}" alt="${esc(x.n)}" loading="lazy" decoding="async" onerror="imgFail(this)">`};
 const HOT=new Set(['Bandeja paisa','Patacón Shalem','Trucha Shalem','Café Renacer','Papas de la Casa','Picada de la Casa','Mojito Maracuyá','Brownie con Helado']);
 const ings=(c,x)=>[...new Set([...x.i,...c.i])].map(ti);
-function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('on',s.id===id));scrollTo(0,0)}
-const card=(c,k,j)=>{const x=c.it[j],g=ings(c,x).slice(0,4).join(', ')||cd(c,k);return `<div class="cd" data-n="${x.n.toLowerCase()}" onclick="op(${k},${j})"><div class="tx">${HOT.has(x.n)?`<em>${t('hot')}</em>`:''}<b>${x.n}</b><p>${g}</p><div class="ft"><span class="pr">${F(x.p)}</span></div></div><div class="th2" style="${bg(c.h)}">${pic(c,x)}</div></div>`};
+const nOpen=()=>Object.keys(pedidos).filter(k=>pedidos[k].length).length;
+const totM=n=>(pedidos[n]||[]).reduce((a,x)=>a+x.p*x.q,0);
+const qtyM=n=>(pedidos[n]||[]).reduce((a,x)=>a+x.q,0);
+function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('on',s.id===id));if(id==='o')renderOrders();scrollTo(0,0);bar()}
+const card=(c,k,j)=>{const x=c.it[j],g=ings(c,x).slice(0,4).join(', ')||cd(c,k);return `<div class="cd" data-n="${(x.n+' '+(EN.get(c.n+'::'+x.n)||EN.get(x.n)||'')).toLowerCase()}" onclick="op(${k},${j})"><div class="tx">${HOT.has(x.n)?`<em>${t('hot')}</em>`:''}<b>${dn(x.n,c.n)}</b><p>${g}</p><div class="ft"><span class="pr">${F(x.p)}</span><button class="ad" onclick="addQuick(${k},${j},event)">+</button></div></div><div class="th2" style="${bg(c.h)}">${pic(c,x)}</div></div>`};
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const b=$('#ch'+e.target.id.slice(1));document.querySelectorAll('#chips .on').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#chips').scrollTo({left:b.offsetLeft-70,behavior:'smooth'})}}),{rootMargin:'-25% 0px -65% 0px'});
 function theme(){T[TK].v.forEach((v,i)=>document.documentElement.style.setProperty('--'+['bg','card','ink','mute','ac','line'][i],v))}
-function render(){theme();document.documentElement.lang=L;$('#lb').textContent=L=='es'?'EN':'ES';
-document.querySelectorAll('[data-t]').forEach(e=>e.innerHTML=t(e.dataset.t));$('#q').placeholder=t('ph');
+function badge(){const b=$('#tm');if(!b)return;const g=mesa&&gente[mesa];b.textContent=mesa?`${t('mesa')} ${mesa}${g&&g.n?' · 👥'+g.n:''}`:t('mesa');b.classList.toggle('on',!!mesa)}
+const where=()=>{const g=gente[mesa];return mesa+(g&&g.n?' · P'+(activa||1):'')};
+function grow(el){el.style.height='auto';el.style.height=el.scrollHeight+'px'}
+function setAct(w){activa=w;renderPP()}
+function renderPP(){const el=$('#pp'),ap=$('#ap');if(!el)return;const g=mesa&&gente[mesa];if(ap)ap.style.display=mesa&&!g?'':'none';
+if(!g||!g.n){el.style.display='none';el.innerHTML='';return}
+if(activa<1||activa>g.n)activa=1;const cnt=w=>(pedidos[mesa]||[]).filter(x=>x.w===w).reduce((a,x)=>a+x.q,0);el.style.display='flex';
+el.innerHTML=Array.from({length:g.n},(_,i)=>i+1).map(w=>{const c=cnt(w);return `<button type="button" class="${w===activa?'on':''}" onclick="setAct(${w})">P${w}${c?`<i>${c}</i>`:''}${w===activa&&w>1?`<span class="rx" aria-label="${t('quitarb')}" onclick="rmPerson(${w},event)">✕</span>`:''}</button>`}).join('')+`<button type="button" class="pl" aria-label="${t('addper')}" onclick="addPerson()">＋</button>`}
+function mergeLines(n){const out=[];(pedidos[n]||[]).forEach(x=>{const h=out.find(y=>y.n===x.n&&y.c===x.c&&y.opt===x.opt&&y.w===x.w);if(h)h.q+=x.q;else out.push(x)});if(pedidos[n])pedidos[n]=out}
+function useMesa(n){if(mesa!==n){mesa=n;const g=gente[n];activa=g&&g.n?1:0}}
+function addP(n){let g=gente[n];if(!g){g=gente[n]={n:1,pn:{}};(pedidos[n]||[]).forEach(x=>x.w=1)}if(g.n<20)g.n++}
+function addPerson(){ensureMesa(()=>{addP(mesa);activa=gente[mesa].n;bar();toast(`${t('padd')} P${activa}`)})}
+function addPersonTo(n){addP(n);if(mesa===n)activa=gente[n].n;renderOrders();bar()}
+function rmPerson(w,e){if(e)e.stopPropagation();rmP(mesa,w)}
+function rmP(n,w){const g=gente[n];if(!g||w<2||w>g.n)return;const list=pedidos[n]||[],p=g.pn;
+if(list.some(x=>x.w===w)||(p[w]||'').trim())ask(t('quitar'),()=>doRm(n,w),t('quitarb'));else doRm(n,w)}
+function doRm(n,w){const g=gente[n];if(!g||w<2||w>g.n)return;const list=pedidos[n]||[],p=g.pn;
+list.forEach(x=>{if(x.w===w)x.w=1;else if(x.w>w)x.w--});
+const mv=(p[w]||'').trim();if(mv)p[1]=((p[1]||'').trim()?p[1].trim()+'\n':'')+mv;
+for(let i=w;i<g.n;i++)p[i]=p[i+1]||'';delete p[g.n];g.n--;
+if(mesa===n)activa=activa===w?1:activa>w?activa-1:activa;
+if(g.n<2){const r=(p[1]||'').trim();if(r)notas[n]=((notas[n]||'').trim()?notas[n].trim()+'\n':'')+r;list.forEach(x=>x.w=0);delete gente[n];if(mesa===n)activa=0}
+mergeLines(n);renderOrders();bar()}
+let cfFn=null;
+function ask(msg,fn,yes){cfFn=fn;$('#cfm').textContent=msg;$('#cfy').textContent=yes||t('si');$('#cfn').textContent=t('no');$('#cf').classList.add('on')}
+function cfNo(){cfFn=null;$('#cf').classList.remove('on')}
+function cfYes(){const f=cfFn;cfFn=null;$('#cf').classList.remove('on');if(f)f()}
+function togM(n,el){plegadas[n]=!plegadas[n];el.parentNode.classList.toggle('cl',!!plegadas[n])}
+function activos(){const a=$('#act');if(!a)return;if(nOpen()){a.style.display='block';a.innerHTML=`<small>${t('pedidos')}</small><h3 class="serif">${nOpen()} ${t('activos')}</h3><p style="color:var(--mute);margin:0">${t('view')}</p>`}else a.style.display='none'}
+function bar(){badge();activos();renderPP();const cb=$('#cb'),onM=$('#m').classList.contains('on');if(!onM){cb.classList.remove('on');return}if(mesa&&qtyM(mesa)){cb.innerHTML=`<b>${t('mesa')} ${mesa} · ${qtyM(mesa)}</b><span>${F(totM(mesa))}</span>`;cb.onclick=()=>go('o');cb.classList.add('on')}else if(nOpen()){cb.innerHTML=`<b>${nOpen()} ${t('activos')}</b><span>${t('view')}</span>`;cb.onclick=()=>go('o');cb.classList.add('on')}else cb.classList.remove('on')}
+function toast(m){const e=$('#ts');e.textContent=m;e.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('on'),1700)}
+function addLine(n,p,opt,cat){if(!mesa)return;const list=pedidos[mesa]||=[];if(!abierto[mesa])abierto[mesa]=Date.now();const o=opt||'',c=cat||'',g=gente[mesa],w=g&&g.n?(activa||1):0;const hit=list.find(x=>x.n===n&&x.opt===o&&x.c===c&&x.w===w);if(hit)hit.q++;else list.push({id:uid++,n,p,q:1,opt:o,c,w});bar()}
+function ensureMesa(fn){if(mesa)fn();else pickMesa(fn)}
+function pickMesa(fn){afterPick=fn||null;$('#thp').textContent=t('pickmesa');$('#mc').placeholder=t('otra');$('#tg').innerHTML=Array.from({length:N_MESAS},(_,i)=>{const n=i+1;return `<button type="button" class="${mesa===n?'sel':''}${qtyM(n)?' busy':''}" onclick="chooseMesa(${n})">${n}</button>`}).join('');$('#mc').value=mesa||'';$('#tp').classList.add('on')}
+function closeTp(){$('#tp').classList.remove('on');afterPick=null}
+function chooseMesa(n){n=parseInt(n,10);if(!(n>0))return;useMesa(n);$('#tp').classList.remove('on');const fn=afterPick;afterPick=null;bar();if(fn)fn()}
+function okMesa(){chooseMesa($('#mc').value)}
+function addQuick(k,j,e){e.stopPropagation();const x=D[k].it[j];if(x.v&&x.v.length){op(k,j);return}ensureMesa(()=>{addLine(x.n,x.p,'',x.c.n);toast(`${t('added')} ${where()}`)})}
+function addFromSheet(k,j){const x=D[k].it[j];if(x.v.length&&!selOpt){toast(t('pickopt'));return}ensureMesa(()=>{addLine(x.n,x.p,selOpt||'',x.c.n);cl();toast(`${t('added')} ${where()}`)})}
+function addDaily(j){const o=dailyList().es[j];ensureMesa(()=>{addLine(DAILY.es.t,DAILY.price,o,'');toast(`${t('added')} ${where()}`)})}
+function setOpt(el){selOpt=el.dataset.v;document.querySelectorAll('.ch.opt').forEach(c=>c.classList.toggle('on',c===el))}
+function chq(n,id,d){const list=pedidos[n];if(!list)return;const x=list.find(i=>i.id===id);if(!x)return;x.q+=d;if(x.q<=0){pedidos[n]=list.filter(i=>i.id!==id);if(!pedidos[n].length){delete pedidos[n];delete abierto[n];delete notas[n];delete gente[n];delete plegadas[n]}}renderOrders();bar()}
+function closeMesa(n){if(!qtyM(n))return;ask(`${t('cerrarq')} ${n}?`,()=>{delete pedidos[n];delete abierto[n];delete notas[n];delete gente[n];delete plegadas[n];renderOrders();bar()},t('cerrar'))}
+function goMesa(n){useMesa(n);go('m')}
+function addFor(n,w){useMesa(n);activa=w;go('m')}
+function setPn(n,w,v){if(gente[n])gente[n].pn[w]=v}
+function mvLine(n,id,v){const x=(pedidos[n]||[]).find(i=>i.id===id);if(!x)return;x.w=parseInt(v,10)||0;mergeLines(n);renderOrders();bar()}
+function rowH(n,x,g){const sel=g?`<select class="mv" data-n="${n}" onchange="mvLine(${n},${x.id},this.value)">${Array.from({length:g.n},(_,i)=>`<option value="${i+1}"${x.w===i+1?' selected':''}>P${i+1}</option>`).join('')}</select>`:'';
+return `<div class="or"><div style="flex:1;min-width:0"><b>${esc(dn(x.n,x.c))}</b>${x.opt?`<br><small style="color:var(--mute)">${esc(ti(x.opt))}</small>`:''}<div class="pr">${F(x.p*x.q)}</div>${sel}</div><div style="display:flex;align-items:center;gap:8px"><button type="button" class="q" onclick="chq(${n},${x.id},-1)">−</button><b>${x.q}</b><button type="button" class="q" onclick="chq(${n},${x.id},1)">+</button></div></div>`}
+function persH(n,g,w){const its=pedidos[n].filter(x=>x.w===w),sub=its.reduce((a,x)=>a+x.p*x.q,0);
+return `<div class="pb"><div class="ph"><b>P${w}</b><span>${its.length?`<small>${F(sub)}</small>`:''}${w>1?`<button type="button" class="rm" aria-label="${t('quitarb')}" onclick="rmP(${n},${w})">✕</button>`:''}</span></div>${its.map(x=>rowH(n,x,g)).join('')||`<p class="mt">${t('sinplatos')}</p>`}<textarea class="ta" rows="2" placeholder="${t('detp')}" oninput="setPn(${n},${w},this.value);grow(this)">${esc(g.pn[w]||'')}</textarea><div class="acts"><button type="button" class="ghost" onclick="addFor(${n},${w})">＋ ${t('addp')} P${w}</button></div></div>`}
+function renderOrders(){const ob=$('#ob');const keys=Object.keys(pedidos).filter(k=>pedidos[k].length).sort((a,b)=>a-b);if(!keys.length){ob.innerHTML=`<div class="fl" style="justify-content:center;padding:48px 0"><span>🍽️</span><span>☕</span><span>🍰</span></div><p class="ftr" style="margin-top:0">${t('vacio')}<br>${t('demo')}</p>`;return}
+ob.innerHTML=keys.map(n=>{const g=gente[n],hora=abierto[n]?new Date(abierto[n]).toLocaleTimeString(L,{hour:'2-digit',minute:'2-digit'}):'';
+const body=g&&g.n?Array.from({length:g.n},(_,i)=>i+1).map(w=>persH(n,g,w)).join(''):pedidos[n].map(x=>rowH(n,x,null)).join('');
+return `<div class="oc${plegadas[n]?' cl':''}"><div class="sh" onclick="togM(${n},this)"><div><h3 class="serif">${t('mesa')} ${n}</h3><small>${hora} · ${qtyM(n)} · ${F(totM(n))}${g&&g.n?` · 👥 ${g.n}`:''}</small></div><i>⌃</i></div><div class="bd">${body}<textarea class="ta" rows="2" placeholder="${t('nota')}" oninput="notas[${n}]=this.value;grow(this)">${esc(notas[n]||'')}</textarea><div class="acts"><button type="button" class="ghost" onclick="goMesa(${n})">＋ ${t('addmore')}</button><button type="button" class="ghost" onclick="addPersonTo(${n})">👤＋ ${t('addper')}</button><button type="button" class="ghost" onclick="closeMesa(${n})">${t('cerrar')}</button></div></div></div>`}).join('');
+ob.querySelectorAll('textarea').forEach(grow)}
+function render(){theme();document.documentElement.lang=L;document.title=L=='en'?'Shalem · Renacer — Menu':'Shalem · Renacer — Carta';$('#lb').textContent=L=='es'?'EN':'ES';
+document.querySelectorAll('[data-t]').forEach(e=>e.innerHTML=t(e.dataset.t));$('#q').placeholder=t('ph');$('#ap').title=t('addper');$('#mc').placeholder=t('otra');
 if(LOGO)$('.mk').innerHTML=`<img src="${LOGO}" alt="">`;
-const d=DAILY[L];$('#dl').innerHTML=`<small>${d.t} · ${new Date().toLocaleDateString(L,{weekday:'long',day:'numeric',month:'long'})}</small><h3 class="serif">${d.t}</h3><ul>${d.i.map(i=>`<li>${i}</li>`).join('')}</ul><b class="pr">${F(DAILY.price)}</b>`;
+const d=DAILY[L],dl=dailyList();$('#dl').innerHTML=`<small>${d.t} · ${new Date().toLocaleDateString(L,{weekday:'long',day:'numeric',month:'long'})}</small><h3 class="serif">${d.t}</h3><b class="pr">${F(DAILY.price)}</b><ul style="list-style:none;padding:0;margin:12px 0 0">${dl[L].map((i,j)=>`<li style="display:flex;align-items:center;gap:10px;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line)"><span style="flex:1;text-align:left">${i}${dl.wk&&j>=d.i.length?` <small style="color:var(--ac);font-weight:700">· ${d.wn}</small>`:''}</span><button type="button" class="ad" onclick="addDaily(${j})">+</button></li>`).join('')}</ul>`;
 $('#chips').innerHTML=D.map((c,k)=>`<button id="ch${k}" onclick="sc(${k})">${cn(c,k)}</button>`).join('');
 $('#mb').innerHTML=D.map((c,k)=>`<section class="cs" id="s${k}"><div class="sh" onclick="this.parentNode.classList.toggle('cl')"><div><h3 class="serif">${cn(c,k)}</h3><small>${cg(c,k)} · ${cd(c,k)}</small></div><i>⌃</i></div><div class="bd">${c.it.map((_,j)=>card(c,k,j)).join('')}</div></section>`).join('');
-io.disconnect();document.querySelectorAll('.cs').forEach(s=>io.observe(s));srch($('#q').value)}
+io.disconnect();document.querySelectorAll('.cs').forEach(s=>io.observe(s));srch($('#q').value);bar();if($('#o').classList.contains('on'))renderOrders()}
 function setLang(){L=L=='es'?'en':'es';render()}
 function sc(k){const s=$('#s'+k);s.classList.remove('cl');scrollTo({top:s.getBoundingClientRect().top+scrollY-$('.stk').offsetHeight-4,behavior:'smooth'})}
 function srch(v){v=v.trim().toLowerCase();document.querySelectorAll('.cs').forEach(s=>{let n=0;s.querySelectorAll('.cd').forEach(d=>{const h=!d.dataset.n.includes(v);d.style.display=h?'none':'';if(!h)n++});s.style.display=n?'':'none';if(v&&n)s.classList.remove('cl')})}
-function op(k,j){const c=D[k],x=c.it[j],ing=ings(c,x);
-$('#sb').innerHTML=`<div class="hero" style="${bg(c.h)}">${pic(c,x)}<button class="x" onclick="cl()">✕</button></div><div class="sb"><h2 class="serif">${x.n}</h2><span class="pr">${F(x.p)}</span>
+function op(k,j){const c=D[k],x=c.it[j],ing=ings(c,x);selOpt=x.v.length===1?x.v[0]:'';
+$('#sb').innerHTML=`<div class="hero" style="${bg(c.h)}">${pic(c,x)}<button class="x" onclick="cl()">✕</button></div><div class="sb"><h2 class="serif">${dn(x.n,c.n)}</h2><span class="pr">${F(x.p)}</span>
 <h3>${t('desc')}</h3><p>${cd(c,k)}</p><span class="ch">⚖️ ${cg(c,k)}</span><span class="ch">${cn(c,k)}</span>
 ${ing.length?`<h3>${t('ing')}</h3>${ing.map(i=>`<span class="ch">${i}</span>`).join('')}`:''}
-${x.v.length?`<h3>${t('opt')}</h3>${x.v.map(i=>`<span class="ch">${ti(i)}</span>`).join('')}`:''}
+${x.v.length?`<h3>${t('opt')}</h3>${x.v.map(i=>`<span class="ch opt${selOpt===i?' on':''}" data-v="${esc(i)}" onclick="setOpt(this)">${esc(ti(i))}</span>`).join('')}`:''}
+<button type="button" class="btn" style="width:100%;margin-top:20px" onclick="addFromSheet(${k},${j})">${t('add')}</button>
 </div>`;$('#sh').classList.add('on')}
 function cl(){$('#sh').classList.remove('on')}
 render();
